@@ -1,0 +1,19 @@
+{
+    "name": "Miyo.Bootstrap",
+    "rootNamespace": "Miyo.Bootstrap",
+    "references": [
+        "Miyo.Core",
+        "Miyo.Services",
+        "Miyo.Infrastructure",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

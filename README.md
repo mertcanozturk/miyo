@@ -40,7 +40,6 @@ Miyo, Türkiye pazarına yönelik, tamamen Türkçe içerikli, reklamsız ve gü
 - Oyun erişim kontrolü
 - İlerleme ve başarı takibi
 - Günlük özet bildirimleri
-
 ---
 
 ## 🛠️ Teknik Detaylar
@@ -50,30 +49,11 @@ Miyo, Türkiye pazarına yönelik, tamamen Türkçe içerikli, reklamsız ve gü
 - **Mimari:** Modüler yapı (Unity Addressable Asset System)
 - **Backend:** Firebase (kullanıcı yönetimi, veri takibi)
 - **Minimum Yaş Grubu:** 3
-
 ---
 
 ## 💰 Monetization
 
-- **Ücretsiz:** 5-6 oyun tam erişim
-- **Premium Paket:** Tek seferlik ödeme ile tüm oyunlara erişim
-- **Abonelik:** Yeni oyunlara erken erişim ve aylık yeni içerik
-
----
-
-## 📁 Proje Yapısı
-
-```
-Miyo/
-├── Assets/
-│   ├── Games/          # Oyun modülleri
-│   ├── UI/             # Arayüz elementleri
-│   ├── Characters/     # Miyo ve diğer karakterler
-│   ├── Audio/          # Ses efektleri ve müzik
-│   └── Addressables/   # Modüler içerik paketleri
-├── ProjectSettings/
-└── README.md
-```
+- **Abonelik:** 7 gün ücretsiz sonra oyunlara erişim ve aylık yeni içerik
 
 ---
 

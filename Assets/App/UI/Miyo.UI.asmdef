@@ -1,0 +1,21 @@
+{
+    "name": "Miyo.UI",
+    "rootNamespace": "Miyo.UI",
+    "references": [
+        "Miyo.Core",
+        "Miyo.Services",
+        "Unity.TextMeshPro",
+        "LitMotion",
+        "UniTask",
+        "LitMotion.Extensions"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

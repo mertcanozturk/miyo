@@ -1,0 +1,25 @@
+{
+    "name": "Miyo.Tests.EditMode",
+    "rootNamespace": "Miyo.Tests.EditMode",
+    "references": [
+        "Miyo.Core",
+        "Miyo.Data",
+        "Miyo.Services",
+        "Miyo.GameFramework"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

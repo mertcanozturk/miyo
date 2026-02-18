@@ -1,0 +1,18 @@
+{
+    "name": "Miyo.Infrastructure",
+    "rootNamespace": "Miyo.Infrastructure",
+    "references": [
+        "Miyo.Core",
+        "Miyo.Services",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

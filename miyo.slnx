@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="Miyo.Data.csproj" />
+  <Project Path="Miyo.GameFramework.csproj" />
+  <Project Path="Miyo.UI.csproj" />
+  <Project Path="Miyo.Services.csproj" />
+  <Project Path="Miyo.Core.csproj" />
+</Solution>
