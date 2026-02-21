@@ -55,5 +55,10 @@ namespace Miyo.Core
         {
             _services.Clear();
         }
+
+        public static bool Contains<T>() where T : class
+        {
+            return _services.ContainsKey(typeof(T));
+        }
     }
 }

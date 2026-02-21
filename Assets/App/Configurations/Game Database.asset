@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0936cbc628c82f345b251ca62ce86279, type: 3}
+  m_Name: Game Database
+  m_EditorClassIdentifier: Miyo.Data::Miyo.Data.GameDatabase
+  _games:
+  - {fileID: 11400000, guid: a81e1115f11054e47b45be35f60274cc, type: 2}
+  - {fileID: 11400000, guid: 7b941f3edc9db41469957e120d1cfb3b, type: 2}
+  _categories:
+  - {fileID: 11400000, guid: efb2400b9780a044c86eb70b548b2819, type: 2}
+  - {fileID: 11400000, guid: d6f51e5982e32d846b07e626452d00ec, type: 2}

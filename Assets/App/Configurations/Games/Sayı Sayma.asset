@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e2ae0f5f16d144ca628ed72505bdb3, type: 3}
+  m_Name: "Say\u0131 Sayma"
+  m_EditorClassIdentifier: Miyo.Data::Miyo.Data.GameDefinition
+  gameName: "Say\u0131 Sayma"
+  gameIcon: {fileID: 21300000, guid: 88f4fc28a66a915419f18ab260afda84, type: 3}
+  category: {fileID: 11400000, guid: efb2400b9780a044c86eb70b548b2819, type: 2}

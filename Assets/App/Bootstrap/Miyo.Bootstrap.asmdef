@@ -3,8 +3,10 @@
     "rootNamespace": "Miyo.Bootstrap",
     "references": [
         "Miyo.Core",
+        "Miyo.Data",
         "Miyo.Services",
         "Miyo.Infrastructure",
+        "Miyo.UI",
         "UniTask"
     ],
     "includePlatforms": [],

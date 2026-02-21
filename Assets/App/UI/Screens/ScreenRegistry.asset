@@ -17,3 +17,13 @@ MonoBehaviour:
     prefab: {fileID: 5163607071455188882, guid: fbef3bba8836b8a459b1aa089b7625e3, type: 3}
   - screenId: parent-register
     prefab: {fileID: 5163607071455188882, guid: 6f4278ce6af837046820be7fa67d320a, type: 3}
+  - screenId: create-child
+    prefab: {fileID: 5163607071455188882, guid: 18862173f54a3fc42a964fa6a8528efd, type: 3}
+  - screenId: parent-home
+    prefab: {fileID: 5163607071455188882, guid: dbfac23b99188c543a46aacfc5b557aa, type: 3}
+  - screenId: child-home
+    prefab: {fileID: 5163607071455188882, guid: a322517f9366d2f46b821c4eb39c12f8, type: 3}
+  - screenId: child-profile-select
+    prefab: {fileID: 5163607071455188882, guid: 08a74352cce59ec4692a1547734e0185, type: 3}
+  - screenId: pin-entry
+    prefab: {fileID: 6854822869300329647, guid: dbe70d021a82f3f4da842e9ef444ee00, type: 3}

@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Miyo.Core;
+using Miyo.Services.Auth;
 using Miyo.UI.MVVM;
 
 namespace Miyo.UI.Screens
@@ -32,21 +33,17 @@ namespace Miyo.UI.Screens
             IsLoading.Value = true;
             IsErrorVisible.Value = false;
 
-            // TODO: Gerçek auth service entegrasyonu
-            // var authService = ServiceLocator.Get<IAuthService>();
-            // var result = await authService.Login(Email.Value, Password.Value);
+            var authService = ServiceLocator.Get<IAuthService>();
+            var result = await authService.Login(Email.Value, Password.Value);
 
-            await Cysharp.Threading.Tasks.UniTask.Delay(1000); // Simülasyon
-
-            bool success = false; // Placeholder
-            if (success)
+            if (result.Success)
             {
                 var nav = ServiceLocator.Get<INavigationService>();
-                // await nav.ClearAndNavigateTo<HomeViewModel>();
+                await AuthNavigationHelper.NavigateAfterAuth(authService.PlayerId, nav);
             }
             else
             {
-                ErrorMessage.Value = "E-posta veya şifre hatalı.";
+                ErrorMessage.Value = result.ErrorMessage;
                 IsErrorVisible.Value = true;
             }
 
@@ -56,7 +53,7 @@ namespace Miyo.UI.Screens
         public void OnRegisterClicked()
         {
             var nav = ServiceLocator.Get<INavigationService>();
-            nav.NavigateTo<ParentRegisterViewModel>().Forget();
+            nav.GoBack().Forget();
         }
     }
 }

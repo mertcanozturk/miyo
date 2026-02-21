@@ -1,6 +1,8 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Miyo.Core;
+using Miyo.Services.Auth;
+using Miyo.Services.ChildProfile;
 using Miyo.Services.DateTimePicker;
 using Miyo.UI.MVVM;
 
@@ -23,8 +25,8 @@ namespace Miyo.UI.Screens
 
         protected override void Initialize()
         {
-            ChildName.Subscribe(_ => ValidateForm(), invokeImmediately: false).AddTo(Disposables);
-            BirthDate.Subscribe(_ => ValidateForm(), invokeImmediately: false).AddTo(Disposables);
+            ChildName.Subscribe(_ => ValidateForm(), invokeImmediately: true).AddTo(Disposables);
+            BirthDate.Subscribe(_ => ValidateForm(), invokeImmediately: true).AddTo(Disposables);
 
             BirthDate.Subscribe(value =>
             {
@@ -59,20 +61,19 @@ namespace Miyo.UI.Screens
 
             IsLoading.Value = true;
 
-            // TODO: Profil kaydetme servisi entegrasyonu
-            // var profileService = ServiceLocator.Get<IChildProfileService>();
-            // await profileService.CreateChild(
-            //     ChildName.Value,
-            //     BirthDate.Value.Value,
-            //     (int)WeekdayLimit.Value,
-            //     (int)WeekendLimit.Value);
-
-            await UniTask.Delay(1000); // Simülasyon
+            var authService = ServiceLocator.Get<IAuthService>();
+            var profileService = ServiceLocator.Get<IChildProfileService>();
+            await profileService.CreateChildAsync(
+                authService.PlayerId,
+                ChildName.Value,
+                BirthDate.Value.Value,
+                (int)WeekdayLimit.Value,
+                (int)WeekendLimit.Value);
 
             IsLoading.Value = false;
 
             var nav = ServiceLocator.Get<INavigationService>();
-            nav.GoBack().Forget();
+            await nav.ClearAndNavigateTo<ChildProfileSelectViewModel>();
         }
 
         public void OnBackClicked()

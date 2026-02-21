@@ -4,8 +4,7 @@ using System.Text;
 namespace Miyo.UI.MVVM
 {
     /// <summary>
-    /// ViewModel tipinden kebab-case screen ID türetir.
-    /// Örnek: ParentLoginViewModel → "parent-login"
+    /// ParentLoginViewModel → "parent-login"
     ///         HomeViewModel        → "home"
     ///         GameSelectViewModel  → "game-select"
     /// </summary>
@@ -18,11 +17,9 @@ namespace Miyo.UI.MVVM
         {
             var name = viewModelType.Name;
 
-            // "ViewModel" suffix'ini kaldır
             if (name.EndsWith("ViewModel", StringComparison.Ordinal))
                 name = name[..^"ViewModel".Length];
 
-            // PascalCase → kebab-case
             return ToKebabCase(name);
         }
 

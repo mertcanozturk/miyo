@@ -1,14 +1,13 @@
-using System.Collections.Generic;
+using Miyo.Data;
 
 namespace Miyo.Services.Analytics
 {
     public interface IAnalyticsService
     {
-        void LogEvent(string eventName);
-        void LogEvent(string eventName, Dictionary<string, object> parameters);
-        void LogGameStarted(string gameId);
-        void LogGameCompleted(string gameId, int stars, float score, float duration);
-        void LogScreenView(string screenName);
-        void SetUserId(string userId);
+        /// <summary>
+        /// Belirtilen çocuk için dummy istatistik verisi döner.
+        /// childId seed olarak kullanılır, böylece her çocuk için farklı veri üretilir.
+        /// </summary>
+        GameStatistic[] GetDummyGameStatistics(string childId, GameDefinition[] availableGames = null);
     }
 }

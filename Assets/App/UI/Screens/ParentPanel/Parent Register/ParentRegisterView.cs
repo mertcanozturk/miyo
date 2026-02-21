@@ -8,10 +8,13 @@ namespace Miyo.UI.Screens
     public class ParentRegisterView : ViewBase<ParentRegisterViewModel>
     {
         [Header("Input Fields")]
+        [SerializeField] private AdvancedInputField _nameField;
         [SerializeField] private AdvancedInputField _emailField;
         [SerializeField] private AdvancedInputField _passwordField;
+        [SerializeField] private AdvancedInputField _confirmPasswordField;
 
         [Header("Buttons")]
+
         [SerializeField] private Button _registerButton;
         [SerializeField] private Button _backButton;
 
@@ -23,9 +26,10 @@ namespace Miyo.UI.Screens
         protected override void OnBind(ParentRegisterViewModel vm)
         {
             // Input → ViewModel
+            _nameField.OnInputChanged += value => vm.Name.Value = value;
             _emailField.OnInputChanged += value => vm.Email.Value = value;
             _passwordField.OnInputChanged += value => vm.Password.Value = value;
-
+            _confirmPasswordField.OnInputChanged += value => vm.ConfirmPassword.Value = value;
             // ViewModel → UI
             vm.ErrorMessage.BindTo(_errorText).AddTo(Disposables);
             vm.IsErrorVisible.BindTo(_errorContainer).AddTo(Disposables);

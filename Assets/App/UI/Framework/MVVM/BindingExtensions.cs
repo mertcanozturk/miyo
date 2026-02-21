@@ -84,8 +84,8 @@ namespace Miyo.UI.MVVM
                     slider.SetValueWithoutNotify(value);
             }).AddTo(composite);
 
-            // Slider → Property
-            void OnSliderChanged(float value) => property.SetValueWithoutNotify(value);
+            // Slider → Property (Value = ile aboneler tetiklensin, örn. limit metni güncellensin)
+            void OnSliderChanged(float value) => property.Value = value;
             slider.onValueChanged.AddListener(OnSliderChanged);
             composite.Add(new Disposable(() => slider.onValueChanged.RemoveListener(OnSliderChanged)));
 
@@ -144,8 +144,8 @@ namespace Miyo.UI.MVVM
             // Property → Field
             property.Subscribe(value => field.SetValueWithoutNotify(value)).AddTo(composite);
 
-            // Field → Property
-            void OnFieldChanged(DateTime? value) => property.SetValueWithoutNotify(value);
+            // Field → Property (Value = ile aboneler tetiklensin, örn. CanSubmit güncellensin)
+            void OnFieldChanged(DateTime? value) => property.Value = value;
             field.OnValueChanged += OnFieldChanged;
             composite.Add(new Disposable(() => field.OnValueChanged -= OnFieldChanged));
 

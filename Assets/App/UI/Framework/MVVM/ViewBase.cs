@@ -76,6 +76,7 @@ namespace Miyo.UI.MVVM
             else
             {
                 _canvasGroup.alpha = 0f;
+                await UniTask.Delay(500);
                 await ViewAnimator.FadeIn(_canvasGroup);
             }
 

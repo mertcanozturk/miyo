@@ -336,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tekrar ho\u015F geldiniz! Miyo d\xFCnyas\u0131na devam etmek i\xE7in bilgilerinizi
+  m_text: "Ho\u015F geldiniz! Miyo d\xFCnyas\u0131na devam etmek i\xE7in bilgilerinizi
     girin."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ffadb8fde101d643823d79a4c9d93e0, type: 2}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 5210660586048685385}
   - component: {fileID: 893990767298766346}
   m_Layer: 5
-  m_Name: giris yap text (1)
+  m_Name: register text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Giri\u015F Yap"
+  m_text: "Kay\u0131t Ol"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae2e02192364957498e2268247ff1ef3, type: 2}
   m_sharedMaterial: {fileID: 348363056342169324, guid: ae2e02192364957498e2268247ff1ef3, type: 2}
@@ -1182,7 +1182,6 @@ GameObject:
   - component: {fileID: 4958075564674999545}
   - component: {fileID: 6826077392568246316}
   - component: {fileID: 4710761109533855803}
-  - component: {fileID: 6633916515444066509}
   - component: {fileID: 8405710617803838418}
   - component: {fileID: 655289793729552805}
   m_Layer: 5
@@ -1283,28 +1282,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!95 &6633916515444066509
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5163607071455188882}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 664637b63351aa84b8933157dcd57b13, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!225 &8405710617803838418
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1329,8 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af67fd594235ff4cb5fba006758d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Miyo.UI::Miyo.UI.Screens.ParentLoginView
-  _animationMode: 1
-  _animator: {fileID: 6633916515444066509}
+  _animationMode: 0
+  _animator: {fileID: 0}
   _emailField: {fileID: 3415213770100376756}
   _passwordField: {fileID: 8520364509368496420}
   _loginButton: {fileID: 1580788455854986799}
@@ -1730,7 +1707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_ContentType
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_CharacterLimit
@@ -1740,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_GlobalFontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 0ffadb8fde101d643823d79a4c9d93e0, type: 2}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 1
@@ -1774,7 +1759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8444076365516471953, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_text
-      value: "\u015Eifre"
+      value: PIN
       objectReference: {fileID: 0}
     - target: {fileID: 8809353290379727965, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_text

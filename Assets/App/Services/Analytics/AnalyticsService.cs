@@ -1,50 +1,41 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using Miyo.Data;
 
 namespace Miyo.Services.Analytics
 {
     public class AnalyticsService : IAnalyticsService
     {
-        public void LogEvent(string eventName)
+        public GameStatistic[] GetDummyGameStatistics(string childId, GameDefinition[] availableGames = null)
         {
-            Debug.Log($"[Analytics] {eventName}");
-        }
+            var seed = childId != null ? childId.GetHashCode() : 42;
+            var rng = new Random(seed);
 
-        public void LogEvent(string eventName, Dictionary<string, object> parameters)
-        {
-            Debug.Log($"[Analytics] {eventName}: {string.Join(", ", parameters)}");
-        }
+            var today = DateTime.Today;
+            var results = new List<GameStatistic>();
 
-        public void LogGameStarted(string gameId)
-        {
-            LogEvent("game_started", new Dictionary<string, object>
+            for (int dayOffset = 0; dayOffset < 30; dayOffset++)
             {
-                { "game_id", gameId },
-            });
-        }
+                var date = today.AddDays(-dayOffset);
+                int sessions = rng.Next(1, 5);
 
-        public void LogGameCompleted(string gameId, int stars, float score, float duration)
-        {
-            LogEvent("game_completed", new Dictionary<string, object>
-            {
-                { "game_id", gameId },
-                { "stars", stars },
-                { "score", score },
-                { "duration", duration }
-            });
-        }
+                for (int i = 0; i < sessions; i++)
+                {
+                    GameDefinition game = null;
+                    if (availableGames != null && availableGames.Length > 0)
+                        game = availableGames[rng.Next(availableGames.Length)];
 
-        public void LogScreenView(string screenName)
-        {
-            LogEvent("screen_view", new Dictionary<string, object>
-            {
-                { "screen_name", screenName }
-            });
-        }
+                    results.Add(new GameStatistic
+                    {
+                        game = game,
+                        playTimeMinutes = rng.Next(5, 45),
+                        starsCount = rng.Next(0, 4),
+                        date = date.AddHours(rng.Next(8, 21))
+                    });
+                }
+            }
 
-        public void SetUserId(string userId)
-        {
-            Debug.Log($"[Analytics] SetUserId: {userId}");
+            return results.ToArray();
         }
     }
 }

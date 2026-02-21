@@ -5,7 +5,7 @@ namespace Miyo.UI
 {
     public class PasswordValidator : MonoBehaviour, IStringFieldValidator
     {
-        [SerializeField] private int _minLength = 4;
+        [SerializeField] private int lenght = 6;
         [SerializeField] private TMP_Text _errorText;
         [SerializeField] private string _errorMessage;
 
@@ -16,7 +16,7 @@ namespace Miyo.UI
 
         public bool Validate(string value)
         {
-            if (value.Length < _minLength)
+            if (value.Length != lenght)
             {
                 _errorText.text = _errorMessage;
                 return false;

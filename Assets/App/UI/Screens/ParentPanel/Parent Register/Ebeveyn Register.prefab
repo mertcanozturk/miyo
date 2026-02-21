@@ -174,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -310}
+  m_AnchoredPosition: {x: 0, y: -360}
   m_SizeDelta: {x: 350, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3928242792240791905
@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -420}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &403156849750570503
@@ -852,7 +852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130.625}
+  m_AnchoredPosition: {x: 0, y: 149.625}
   m_SizeDelta: {x: 400, y: 100.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &48053817226386946
@@ -903,7 +903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 296.6}
+  m_AnchoredPosition: {x: 0, y: 321}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8325801239204054180
@@ -1182,7 +1182,6 @@ GameObject:
   - component: {fileID: 4958075564674999545}
   - component: {fileID: 6826077392568246316}
   - component: {fileID: 4710761109533855803}
-  - component: {fileID: 6633916515444066509}
   - component: {fileID: 887313554835388530}
   - component: {fileID: 8876004674655528472}
   m_Layer: 5
@@ -1211,6 +1210,7 @@ RectTransform:
   - {fileID: 2153957187592353500}
   - {fileID: 5765094240752232963}
   - {fileID: 674016151511359379}
+  - {fileID: 235110113003287903}
   - {fileID: 4263800641395944758}
   - {fileID: 1399488887118996211}
   m_Father: {fileID: 0}
@@ -1283,28 +1283,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!95 &6633916515444066509
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5163607071455188882}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f18ee6197aab9e468c6287a2adc7628, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!225 &887313554835388530
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1329,14 +1307,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10f43782fec713489be1be520c55720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Miyo.UI::Miyo.UI.Screens.ParentRegisterView
-  _animationMode: 1
-  _animator: {fileID: 6633916515444066509}
-  _emailField: {fileID: 0}
-  _passwordField: {fileID: 0}
-  _registerButton: {fileID: 0}
+  _animationMode: 0
+  _animator: {fileID: 0}
+  _nameField: {fileID: 7097841070001854571}
+  _emailField: {fileID: 3415213770100376756}
+  _passwordField: {fileID: 8520364509368496420}
+  _confirmPasswordField: {fileID: 8946324898475498472}
+  _registerButton: {fileID: 1580788455854986799}
   _backButton: {fileID: 8621438199647285107}
-  _errorText: {fileID: 0}
-  _errorContainer: {fileID: 0}
+  _errorText: {fileID: 1312288469965565690}
+  _errorContainer: {fileID: 4950152977494748898}
   _loadingIndicator: {fileID: 0}
 --- !u!1 &6611513283120261721
 GameObject:
@@ -1749,6 +1729,143 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8202305999126897224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9170480227766196552}
+  - component: {fileID: 6464841808915612611}
+  - component: {fileID: 2459200944691527215}
+  m_Layer: 5
+  m_Name: error text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9170480227766196552
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202305999126897224}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 235110113003287903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 25.000378, y: -35.50444}
+  m_SizeDelta: {x: 300, y: 22.395}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6464841808915612611
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202305999126897224}
+  m_CullTransparentMesh: 1
+--- !u!114 &2459200944691527215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202305999126897224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u015Eifre en az 4 karakterli olmal\u0131d\u0131r."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0ffadb8fde101d643823d79a4c9d93e0, type: 2}
+  m_sharedMaterial: {fileID: 348363056342169324, guid: 0ffadb8fde101d643823d79a4c9d93e0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279641005
+  m_fontColor: {r: 0.6792453, g: 0.13706172, b: 0.086507656, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 14
+  m_fontSizeBase: 14
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: -9.93
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 18.16
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8538270445866994529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2092,7 +2209,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
   m_PrefabInstance: {fileID: 758063557711747748}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2178577227265962987
+--- !u!114 &7097841070001854571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7495597347333751503, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 758063557711747748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457729580693012338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689a3e6e0ac4bfb4bbbfdb97f74f4b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.AdvancedInputField
+--- !u!1001 &1450736368747354407
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2170,7 +2298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: -260
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2262,7 +2390,245 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8444076365516471953, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_text
-      value: "\u015Eifre"
+      value: PIN (Tekrar)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809353290379727965, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_text
+      value: "\u200B"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9170480227766196552}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2215713423727715798, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3953628264559136320}
+    - targetCorrespondingSourceObject: {fileID: 2215713423727715798, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2660633736860716957}
+  m_SourcePrefab: {fileID: 100100000, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+--- !u!224 &235110113003287903 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 1450736368747354407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &764985851095022833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2215713423727715798, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 1450736368747354407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &3953628264559136320
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764985851095022833}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &2660633736860716957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764985851095022833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3587c817d95ac140818757e887b680e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.PasswordMatchValidator
+  _passwordInputField: {fileID: 8520364509368496420}
+  _errorText: {fileID: 2459200944691527215}
+  _errorMessage: "PIN'ler e\u015Fle\u015Fmiyor."
+--- !u!114 &8946324898475498472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7495597347333751503, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 1450736368747354407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764985851095022833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689a3e6e0ac4bfb4bbbfdb97f74f4b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.AdvancedInputField
+--- !u!1001 &2178577227265962987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2463370696272462975}
+    m_Modifications:
+    - target: {fileID: 1062259700450946513, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924663756455959987, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215713423727715798, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Name
+      value: password field
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799178773203374770, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 32db6e194b9b55440ac8756a784011db, type: 3}
+    - target: {fileID: 2799178773203374770, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_ContentType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_CharacterLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_GlobalFontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ffadb8fde101d643823d79a4c9d93e0, type: 2}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331276786472698030, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919023428499233120, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_text
+      value: '********'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444076365516471953, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+      propertyPath: m_text
+      value: PIN
       objectReference: {fileID: 0}
     - target: {fileID: 8809353290379727965, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_text
@@ -2301,7 +2667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Miyo.UI::Miyo.UI.PasswordValidator
   _minLength: 4
   _errorText: {fileID: 1312288469965565690}
-  _errorMessage: "\u015Eifre en az 4 karakterli olmal\u0131d\u0131r."
+  _errorMessage: "PIN en az 4 karakterli olmal\u0131d\u0131r."
 --- !u!225 &7438336381381342802
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2319,6 +2685,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
   m_PrefabInstance: {fileID: 2178577227265962987}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8520364509368496420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7495597347333751503, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 2178577227265962987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37181001648805437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689a3e6e0ac4bfb4bbbfdb97f74f4b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.AdvancedInputField
 --- !u!1001 &5143375510837610107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2397,7 +2774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -90
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2489,6 +2866,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1727487547305088151}
   m_SourcePrefab: {fileID: 100100000, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+--- !u!114 &3415213770100376756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7495597347333751503, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
+  m_PrefabInstance: {fileID: 5143375510837610107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475960038940844973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689a3e6e0ac4bfb4bbbfdb97f74f4b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.AdvancedInputField
 --- !u!224 &5765094240752232963 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1684709565230525560, guid: 4569dee4eaf3fa44f9c4122abc821b94, type: 3}
