@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef0dfef566b07f4681fa0d3eda23fcd, type: 3}
+  m_Name: Match Letter Config
+  m_EditorClassIdentifier: Miyo.Data::Miyo.Data.CategoryDefinition
+  _levels:
+  - levelCount: 40
+    letterCount: 4
+    isCaseSensitive: 0
+  - levelCount: 5
+    letterCount: 6
+    isCaseSensitive: 0
+  - levelCount: 10
+    letterCount: 8
+    isCaseSensitive: 0
+  - levelCount: 15
+    letterCount: 10
+    isCaseSensitive: 0
+  - levelCount: 20
+    letterCount: 12
+    isCaseSensitive: 0

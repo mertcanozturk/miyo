@@ -1,11 +1,13 @@
 using Cysharp.Threading.Tasks;
 using Miyo.Core;
+using Miyo.Core.Events;
 using Miyo.Data;
-using Miyo.Services.Analytics;
+using Miyo.Games;
 using Miyo.Services.Auth;
 using Miyo.Services.ChildProfile;
 using Miyo.Services.DateTimePicker;
 using Miyo.Services.Save;
+using Miyo.Services.Statistics;
 using Miyo.UI.MVVM;
 using UnityEngine;
 
@@ -15,12 +17,13 @@ namespace Miyo.Bootstrap
     {
         [SerializeField] private GameDatabase _gameDatabase;
         [SerializeField] private NavigationService _navigationService;
+        [SerializeField] private GameLauncher _gameLauncher;
 
         private async void Awake()
         {
+            ServiceLocator.Register<IEventBus>(new EventBus());
             RegisterGameDatabase();
-            RegisterNavigationService();
-            RegisterAnalyticsService();
+            RegisterGameLauncher();
             RegisterDateTimePicker();
 
             // UGS Auth — Register immediately so other scripts can Get it, then initialize safely
@@ -34,14 +37,18 @@ namespace Miyo.Bootstrap
             ServiceLocator.Register<ISaveService>(saveService);
 
             // ChildProfile depends on SaveService
-            ServiceLocator.Register<IChildProfileService>(new ChildProfileService(saveService));
+            var childProfileService = new ChildProfileService(saveService);
+            ServiceLocator.Register<IChildProfileService>(childProfileService);
+
+            // Statistics depends on SaveService, ChildProfile, GameDatabase, EventBus
+            ServiceLocator.Register<IGameStatisticService>(new GameStatisticService(
+                saveService,
+                childProfileService,
+                _gameDatabase,
+                ServiceLocator.Get<IEventBus>()
+            ));
 
             Debug.Log("[ServiceInstaller] All services registered.");
-        }
-
-        private void RegisterNavigationService()
-        {
-            ServiceLocator.Register<INavigationService>(_navigationService);
         }
 
         private void RegisterGameDatabase()
@@ -54,9 +61,14 @@ namespace Miyo.Bootstrap
             ServiceLocator.Register<GameDatabase>(_gameDatabase);
         }
 
-        private void RegisterAnalyticsService()
+        private void RegisterGameLauncher()
         {
-            ServiceLocator.Register<IAnalyticsService>(new AnalyticsService());
+            if (_gameLauncher == null)
+            {
+                Debug.LogWarning("[ServiceInstaller] GameLauncher atanmamış.");
+                return;
+            }
+            ServiceLocator.Register<IGameLauncher>(_gameLauncher);
         }
 
         private void RegisterDateTimePicker()

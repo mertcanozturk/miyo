@@ -3,7 +3,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using Miyo.Core;
 using Miyo.Data;
-using Miyo.Services.Analytics;
+using Miyo.Services.Statistics;
 using Miyo.Services.Auth;
 using Miyo.Services.ChildProfile;
 using Miyo.Services.Save;
@@ -66,14 +66,13 @@ namespace Miyo.UI.Screens
             nav.NavigateTo<CreateChildViewModel>().Forget();
         }
 
-        private void LoadStatisticsForChild(string childId)
+        private async void LoadStatisticsForChild(string childId)
         {
-            var analytics = ServiceLocator.Get<IAnalyticsService>();
-            var db = ServiceLocator.Get<GameDatabase>();
-            var stats = analytics.GetDummyGameStatistics(childId, db.Games);
+            var statisticService = ServiceLocator.Get<IGameStatisticService>();
+            var stats = await statisticService.GetStatisticsForChildAsync(childId);
             Statistics.Value = new List<GameStatistic>(stats);
 
-            var dailyStats = StatisticExtensions.GetDailyPlayTimeByGame(stats.ToArray(), System.DateTime.Today);
+            var dailyStats = StatisticExtensions.GetDailyPlayTimeByGame(stats, System.DateTime.Today);
             var child = SelectedChild.Value;
             var isWeekend = System.DateTime.Today.DayOfWeek == System.DayOfWeek.Saturday || System.DateTime.Today.DayOfWeek == System.DayOfWeek.Sunday;
             int limit = isWeekend ? child.WeekendLimitMinutes : child.WeekdayLimitMinutes;

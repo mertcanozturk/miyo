@@ -1,16 +1,23 @@
 namespace Miyo.Core.Events
 {
-    public struct GameStartedEvent
+    public struct GameSessionStartedEvent
     {
         public string GameId;
     }
 
-    public struct GameCompletedEvent
+    public struct GameSessionEndedEvent
     {
         public string GameId;
+        public float SessionDurationSeconds;
+        public int LevelsCompleted;
+    }
+
+    public struct LevelCompletedEvent
+    {
+        public string GameId;
+        public int LevelIndex;
         public int Stars;
         public float Score;
-        public int DifficultyLevel;
         public float DurationSeconds;
         public int CorrectAnswers;
         public int TotalQuestions;

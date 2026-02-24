@@ -10,9 +10,9 @@ namespace Miyo.UI
     [Serializable]
     public struct BarGraphEntry
     {
-        public float Value;           // Bar yüksekliği için (örn. dakika)
-        public string ValueDisplay;   // Üstte gösterilen metin (örn. "2s 50dk")
-        public string Label;          // Altta gösterilen etiket (örn. "Pzt")
+        public float Value;
+        public string ValueDisplay;
+        public string Label;
     }
 
     [RequireComponent(typeof(RectTransform))]
@@ -21,9 +21,6 @@ namespace Miyo.UI
         [Header("Collections")]
         [SerializeField] private UICollection<BarGraphValue> _valueElements;
         [SerializeField] private UICollection<BarGraphIndicator> _indicators;
-
-        [Header("Settings")]
-        [SerializeField] private float _maxValue = 0f; // 0 ise veriden hesaplanır
 
         private float _barWidth;
 
@@ -42,9 +39,8 @@ namespace Miyo.UI
             }
 
             float calculatedMaxValue = maxValue > 0 ? maxValue : entries.Max(e => e.Value);
-            if (calculatedMaxValue <= 0) calculatedMaxValue = 1f; // Sıfıra bölmeyi önle
+            if (calculatedMaxValue <= 0) calculatedMaxValue = 1f;
 
-            // UICollection'ların count'unu ayarla
             _valueElements.Count = entries.Count;
             _indicators.Count = entries.Count;
 
@@ -90,7 +86,6 @@ namespace Miyo.UI
             var topContainer = _valueElements.CurrentParent;
             var bottomContainer = _indicators.CurrentParent;
 
-            // Layout'u force rebuild et
             if (topContainer != null)
                 LayoutRebuilder.ForceRebuildLayoutImmediate(topContainer);
             if (bottomContainer != null)
@@ -98,10 +93,8 @@ namespace Miyo.UI
 
             Canvas.ForceUpdateCanvases();
 
-            // İlk frame'de hemen genişlikleri setle
             SetBarWidths();
 
-            // Bir frame bekle ve tekrar kontrol et (container genişliği 0 olabilir)
             StartCoroutine(DelayedLayoutUpdate());
         }
 
@@ -116,7 +109,6 @@ namespace Miyo.UI
             
             if (count > 0 && topContainer != null && bottomContainer != null)
             {
-                // Container genişliğini ve spacing'i al
                 var topLayoutGroup = topContainer.GetComponent<HorizontalLayoutGroup>();
                 var bottomLayoutGroup = bottomContainer.GetComponent<HorizontalLayoutGroup>();
 
@@ -131,7 +123,6 @@ namespace Miyo.UI
                 {
                     _barWidth = (containerWidth - spacing * (count - 1)) / count;
 
-                    // Genişlikleri doğrudan setle
                     for (int i = 0; i < count; i++)
                     {
                         var valueElement = _valueElements[i];
@@ -156,7 +147,7 @@ namespace Miyo.UI
 
         private System.Collections.IEnumerator DelayedLayoutUpdate()
         {
-            yield return null; // Bir frame bekle
+            yield return null;
 
             if (_valueElements == null || _indicators == null)
                 yield break;
@@ -164,7 +155,6 @@ namespace Miyo.UI
             var topContainer = _valueElements.CurrentParent;
             var bottomContainer = _indicators.CurrentParent;
 
-            // Top ve bottom container'lara aynı preferredHeight ver
             if (topContainer != null && bottomContainer != null)
             {
                 var topLayoutElement = topContainer.GetComponent<LayoutElement>();
@@ -175,7 +165,6 @@ namespace Miyo.UI
                 if (bottomLayoutElement == null)
                     bottomLayoutElement = bottomContainer.gameObject.AddComponent<LayoutElement>();
 
-                // Container yüksekliğini al ve her ikisine de aynı değeri ver
                 float containerHeight = Mathf.Max(topContainer.rect.height, bottomContainer.rect.height);
                 if (containerHeight > 0)
                 {
@@ -184,7 +173,6 @@ namespace Miyo.UI
                 }
             }
 
-            // Layout'u tekrar rebuild et
             if (topContainer != null)
                 LayoutRebuilder.ForceRebuildLayoutImmediate(topContainer);
             if (bottomContainer != null)
@@ -192,7 +180,6 @@ namespace Miyo.UI
 
             Canvas.ForceUpdateCanvases();
 
-            // Genişlikleri tekrar setle (container genişliği artık doğru olabilir)
             SetBarWidths();
         }
 

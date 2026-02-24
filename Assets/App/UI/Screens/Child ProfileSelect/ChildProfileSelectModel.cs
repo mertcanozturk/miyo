@@ -3,7 +3,6 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using Miyo.Core;
 using Miyo.Data;
-using Miyo.Services.Analytics;
 using Miyo.Services.Auth;
 using Miyo.Services.ChildProfile;
 using Miyo.Services.Save;
