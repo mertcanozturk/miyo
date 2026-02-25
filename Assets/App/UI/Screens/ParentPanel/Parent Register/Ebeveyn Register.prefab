@@ -1229,7 +1229,7 @@ Canvas:
   m_GameObject: {fileID: 5163607071455188882}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2665,7 +2665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8afa8f99f6dafd43acc8d97a9515606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Miyo.UI::Miyo.UI.PasswordValidator
-  _minLength: 4
+  lenght: 6
   _errorText: {fileID: 1312288469965565690}
   _errorMessage: "PIN en az 4 karakterli olmal\u0131d\u0131r."
 --- !u!225 &7438336381381342802

@@ -16,8 +16,10 @@ namespace Miyo.UI.MVVM
         [SerializeField] private ViewAnimationMode _animationMode = ViewAnimationMode.Code;
         [SerializeField] private Animator _animator;
 
+
         private static readonly int OpenHash = Animator.StringToHash("Open");
         private static readonly int CloseHash = Animator.StringToHash("Close");
+        private Canvas _canvas;
 
         private CanvasGroup _canvasGroup;
         private TViewModel _viewModel;
@@ -31,6 +33,8 @@ namespace Miyo.UI.MVVM
 
         protected virtual void Awake()
         {
+            _canvas = GetComponentInParent<Canvas>();
+            _canvas.worldCamera = Camera.main;
             _canvasGroup = GetComponent<CanvasGroup>();
             if (_animator == null)
                 _animator = GetComponent<Animator>();

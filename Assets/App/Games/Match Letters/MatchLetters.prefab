@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 7870856453393501243}
   - component: {fileID: 3956331366862578341}
   - component: {fileID: 2136231792965587300}
-  - component: {fileID: 5963795991567427948}
+  - component: {fileID: 815838827524613492}
   m_Layer: 5
-  m_Name: Child Home
+  m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Canvas:
   m_GameObject: {fileID: 2788440273918143793}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -194,7 +194,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5963795991567427948
+--- !u!114 &815838827524613492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,19 +203,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2788440273918143793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517b112d4502ae8429f681c77484e13e, type: 3}
+  m_Script: {fileID: 11500000, guid: 43e75cca4edb5524da22d85c56ffab00, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Miyo.UI::Miyo.UI.ChildHomeView
-  _animationMode: 0
-  _animator: {fileID: 0}
-  _childNameText: {fileID: 0}
-  _gameAppViews:
-    itemRes: {fileID: 0}
-    predefinedItems: []
-    customParent: {fileID: 0}
-    _count: 0
-    _items: []
-    _initialized: 0
+  m_EditorClassIdentifier: Miyo.Core::Miyo.Core.CanvasCameraSetter
 --- !u!1 &3234131075193801703
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Miyo.Games::Miyo.Games.MatchPuzzleCard
   _letterText: {fileID: 6559456306590991727}
+  _spriteDisplay: {fileID: 0}
   _button: {fileID: 358379368205552616}
   _cardBack: {fileID: 5835196941749169578}
   _cardFront: {fileID: 1236703620453419896}
@@ -951,9 +942,9 @@ MonoBehaviour:
     _count: 0
     _items: []
     _initialized: 0
-  _configuration: {fileID: 11400000, guid: b8067f46c577b984aba2bc00118db034, type: 2}
   _backButton: {fileID: 3397774968622742548}
   _matchHighlightColor: {r: 0.4, g: 0.9, b: 0.4, a: 1}
+  _configuration: {fileID: 11400000, guid: b8067f46c577b984aba2bc00118db034, type: 2}
 --- !u!1001 &392515402727720515
 PrefabInstance:
   m_ObjectHideFlags: 0
